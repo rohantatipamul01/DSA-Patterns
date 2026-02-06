@@ -4,6 +4,8 @@ public class SmallestWindow {
     public static void main(String args[])
     {
         String s="01212";
+        int result=hasAllChars(s, "012");
+        System.out.println("Smallest window length containing 0, 1 and 2 is: "+result);
     }
     static int hasAllChars(String s, String pattern)
     {

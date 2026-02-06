@@ -1,3 +1,4 @@
+package SlidingWindow;
 class MaxSum {
     public static void main(String args[])
     {
