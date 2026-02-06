@@ -1,32 +1,37 @@
 package SlidingWindow;
 
+import java.util.Arrays;
+
 public class AverageSum {
-    public static void main(String args[])
-    {
-        int arr[] = {1, 12, -5, -6, 50, 3};
-        int k = 4;
-        double result = findAverage(arr, k);
-        System.out.println("Maximum average of subarray of size " + k + " is: " + result);
+    public static void main(String args[]) {
+
+        int arr[] = {1, 3, 2, 6, -1, 4, 1, 8, 2};
+        int k = 5;
+
+        double[] result = findAverage(arr, k);
+
+        System.out.println("Averages of subarrays of size " + k + " are: " + Arrays.toString(result));
     }
-    static double findAverage(int arr[],int k)
-    {
-        int nums[]=new int[arr.length];
-        int n=arr.length;
-        double maxSum=0;
-        double windowSum=0;
-        // Calculate sum of first window of size k
-        for(int i=0;i<k;i++){
-            windowSum+=arr[i];
+
+    static double[] findAverage(int arr[], int k) {
+
+        double nums[] = new double[arr.length - k + 1];
+
+        int windowSum = 0;
+
+        // First window sum
+        for (int i = 0; i < k; i++) {
+            windowSum += arr[i];
         }
-        maxSum=windowSum;
-        // Slide the window from left to right
-        for(int i=k;i<n;i++){
-            windowSum=windowSum-arr[i-k]+arr[i];
-            if(windowSum>maxSum){
-                maxSum=windowSum;
-            }
+
+        nums[0] = (double) windowSum / k;
+
+        // Sliding window
+        for (int i = k; i < arr.length; i++) {
+            windowSum += arr[i] - arr[i - k];
+            nums[i - k + 1] = (double) windowSum / k;
         }
-        
-        return maxSum/k;
+
+        return nums;
     }
 }
