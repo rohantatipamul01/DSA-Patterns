@@ -1,6 +1,6 @@
 // 4) First Negative Number in Every Window of Size K
 
-// Problem: For every window of size k, print the first negative number.
+// Problem: For every window of size k, print the first negative number in O(n)
 
 // Testcases:
 
