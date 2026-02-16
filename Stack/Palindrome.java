@@ -7,6 +7,7 @@
 // Input: "madam" → Output: true
 
 // Input: "hello" → Output: false
+
 package Stack;
 import java.util.*;
 public class Palindrome {
