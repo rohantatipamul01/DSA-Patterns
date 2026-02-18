@@ -17,13 +17,13 @@ public class Operations {
     public static void main(String args[])
     {
         List<Integer> queue=new ArrayList<>();
-        // enqueue(queue, 10);
-        // enqueue(queue, 20);
-        // enqueue(queue, 30);
-        // enqueue(queue, 40);
-        // System.out.println("Dequeued element: " + dequeue(queue));
+        enqueue(queue, 10);
+        enqueue(queue, 20);
+        enqueue(queue, 30);
+        enqueue(queue, 40);
+        System.out.println("Dequeued element: " + dequeue(queue));
         System.out.println("Front element: " + front(queue));
-        System.out.println("Is queue empty? " + isEmpty(queue));
+        
         
     }
     static void enqueue(List<Integer> queue,int element)
@@ -48,9 +48,6 @@ public class Operations {
         }
         return queue.get(0);
     }
-    static boolean isEmpty(List<Integer> queue)
-    {
-        return queue.isEmpty();
-    }
+   
     
 }
